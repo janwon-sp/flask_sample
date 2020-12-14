@@ -12,9 +12,8 @@ def good():
     name = "Good"
     return name
 
-@app.route('/hello')
-def hello():
-    name = "田中"
+@app.route('/hello/<name>')
+def hello(name=None):
     return render_template('hello.html', title="Hello Flask", name=name)
 
 if __name__ == '__main__':
