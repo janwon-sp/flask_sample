@@ -1,8 +1,9 @@
 from flask import Flask
+from flask import render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
+def index():
     name = "Hello World"
     return name
 
@@ -10,3 +11,11 @@ def hello():
 def good():
     name = "Good"
     return name
+
+@app.route('/hello')
+def hello():
+    name = "田中"
+    return render_template('hello.html', title="Hello Flask", name=name)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
