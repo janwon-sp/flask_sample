@@ -6,7 +6,7 @@ RUN apt-get update -y && apt-get install -y sqlite3 libsqlite3-dev\
     && rm -rf /var/lib/apt/lists/*
 
 # flask / pytest のインストール
-RUN pip3 install flask pytest pytest-cov
+RUN pip3 install flask pytest pytest-cov sqlalchemy
 
 # sqlite3用
 RUN mkdir /db
